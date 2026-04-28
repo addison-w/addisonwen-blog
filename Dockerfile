@@ -1,4 +1,4 @@
-FROM klakegg/hugo:ext-alpine AS build
+FROM hugomods/hugo:exts AS build
 WORKDIR /src
 COPY . .
 RUN hugo --minify
