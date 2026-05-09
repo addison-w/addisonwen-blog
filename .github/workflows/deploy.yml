@@ -9,7 +9,6 @@ jobs:
     steps:
       - name: Trigger Coolify Deploy
         run: |
-          curl --request GET \
-            "https://coolify.addisons.app/api/v1/deploy" \
-            --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}" \
-            --data-urlencode "uuid=geqq7fpjie5rvya5bpssossd"
+          curl --request POST \
+            "https://coolify.addisons.app/api/v1/deploy?uuid=geqq7fpjie5rvya5bpssossd" \
+            --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
