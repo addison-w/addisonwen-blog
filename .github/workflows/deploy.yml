@@ -8,4 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Coolify Deploy
-        run: curl --request GET "${{ secrets.COOLIFY_WEBHOOK_URL }}"
+        run: |
+          curl --request GET \
+            "https://coolify.addisons.app/api/v1/deploy" \
+            --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}" \
+            --data-urlencode "uuid=geqq7fpjie5rvya5bpssossd"
